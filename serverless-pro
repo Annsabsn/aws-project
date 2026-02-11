@@ -222,4 +222,5 @@ I would use Terraform or AWS CloudFormation to automate VPC creation, subnet set
 
 Designed and implemented a secure AWS cloud infrastructure integrating VPC networking, EC2 compute services, Amazon S3 storage, and IAM-based access control. Configured subnetting, routing, internet connectivity, and security controls while applying cloud networking best practices.
 
-Output: ghr
+Output: 
+
