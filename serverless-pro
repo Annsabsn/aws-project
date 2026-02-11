@@ -1,0 +1,225 @@
+By completing the AWS101 Architecture workshop, I designed and implemented a secure, internet-connected AWS cloud infrastructure from scratch.
+
+I worked with:
+
+* AWS VPC Design
+* Subnetting & Routing
+* Internet Gateway Configuration
+* EC2 Deployment
+* Security Group Management
+* Elastic IP Association
+* Amazon S3
+* IAM Roles & Policies
+* Cloud Networking Fundamentals
+
+This project demonstrates practical experience in designing a secure AWS network, deploying compute resources, integrating storage, and implementing identity-based access control following best practices.
+
+---
+
+# 🏗 Step-by-Step Implementation with Explanation
+
+---
+
+## 1️⃣ Designed a Custom VPC
+
+* Created a VPC with a defined CIDR block.
+* Established isolated networking environment.
+
+**Explanation:**
+A VPC forms the foundation of AWS networking and provides complete control over IP addressing, routing, and security.
+
+---
+
+## 2️⃣ Created Subnets (Subnetting & Routing)
+
+* Created a Public Subnet inside the VPC.
+* Planned IP allocation properly.
+* Associated subnet with route table.
+
+**Explanation:**
+Subnetting divides the network into logical sections, improving scalability and security control.
+
+---
+
+## 3️⃣ Configured Internet Gateway
+
+* Created and attached Internet Gateway to the VPC.
+* Added route `0.0.0.0/0 → IGW`.
+
+**Explanation:**
+Internet Gateway enables communication between instances in the public subnet and the internet.
+
+---
+
+## 4️⃣ Deployed EC2 Instance
+
+* Selected AMI and instance type.
+* Configured key pair for SSH.
+* Launched instance in public subnet.
+
+**Explanation:**
+EC2 provides scalable virtual compute capacity in AWS.
+
+---
+
+## 5️⃣ Configured Security Groups
+
+* Allowed SSH (Port 22).
+* Allowed HTTP (Port 80).
+
+**Explanation:**
+Security Groups act as stateful firewalls controlling inbound and outbound traffic at instance level.
+
+---
+
+## 6️⃣ Associated Elastic IP
+
+* Allocated Elastic IP.
+* Attached it to EC2 instance.
+
+**Explanation:**
+Elastic IP ensures a static public IP for consistent access.
+
+---
+
+## 7️⃣ Created and Configured Amazon S3
+
+* Created S3 bucket.
+* Uploaded files or static content.
+* Configured permissions.
+
+**Explanation:**
+S3 provides highly durable object storage used for backups, static website hosting, and file storage.
+---
+
+## 8️⃣ Implemented IAM
+
+* Created IAM roles and policies.
+* Attached IAM role to EC2 for secure S3 access.
+
+**Explanation:**
+IAM ensures secure, temporary, and role-based access control without storing access keys.
+
+---
+
+# 🎯 Skills Demonstrated
+
+* AWS Networking Architecture
+* CIDR Planning & Subnetting
+* Traffic Routing
+* Internet Gateway Setup
+* EC2 Deployment
+* Security Group Configuration
+* Elastic IP Management
+* S3 Storage Integration
+* IAM Access Control
+* Secure Infrastructure Design
+
+---
+
+# 🎤 Combined Advanced Interview Questions & Answers
+
+---
+
+## 1️⃣ Explain complete traffic flow from internet to EC2.
+
+**Answer:**
+Traffic flows from the internet → Internet Gateway → Route Table → Public Subnet → EC2 instance (if Security Group allows it). Return traffic is automatically allowed because Security Groups are stateful.
+
+---
+
+## 2️⃣ What are the requirements for EC2 to access the internet?
+
+**Answer:**
+
+1. Internet Gateway attached
+2. Route table entry (0.0.0.0/0 → IGW)
+3. Public or Elastic IP assigned
+
+All three must be properly configured.
+
+---
+
+## 3️⃣ Difference between Internet Gateway and NAT Gateway?
+
+**Answer:**
+Internet Gateway allows inbound and outbound internet access for public instances.
+NAT Gateway allows outbound internet access for private instances without exposing them publicly.
+
+---
+
+## 4️⃣ How can EC2 securely access S3?
+
+**Answer:**
+By attaching an IAM role with required S3 permissions to the EC2 instance. For higher security, use a VPC Gateway Endpoint for S3.
+
+---
+
+## 5️⃣ Why is IAM role better than access keys?
+
+**Answer:**
+IAM roles provide temporary credentials, automatic rotation, and eliminate storing permanent access keys inside instances.
+
+---
+
+## 6️⃣ What is CIDR and why is it important?
+
+**Answer:**
+CIDR defines the IP range of a VPC. It determines the number of subnets and hosts available and ensures scalable network design.
+
+---
+
+## 7️⃣ How would you troubleshoot EC2 internet connectivity issues?
+
+**Answer:**
+Check:
+
+* Internet Gateway attachment
+* Route table configuration
+* Subnet association
+* Public/Elastic IP
+* Security Group rules
+* NACL rules
+
+Systematic checking helps identify root cause quickly.
+
+---
+
+## 8️⃣ What are security risks in this basic architecture?
+
+**Answer:**
+
+* SSH open to 0.0.0.0/0
+* Single AZ deployment
+* No monitoring
+* No encryption enforced on S3
+
+These can be improved for production.
+
+---
+
+## 9️⃣ How would you make this architecture production-ready?
+
+**Answer:**
+
+* Deploy across multiple Availability Zones
+* Use Auto Scaling Group
+* Add Application Load Balancer
+* Use NAT Gateway for private subnet
+* Enable CloudWatch monitoring
+* Enable S3 encryption and versioning
+
+---
+
+## 🔟 If converting this to Infrastructure as Code, what would you use?
+
+**Answer:**
+I would use Terraform or AWS CloudFormation to automate VPC creation, subnet setup, EC2 deployment, IAM roles, and S3 configuration for repeatable and scalable infrastructure management.
+
+---
+
+# 💼 Final Resume Statement
+
+Designed and implemented a secure AWS cloud infrastructure integrating VPC networking, EC2 compute services, Amazon S3 storage, and IAM-based access control. Configured subnetting, routing, internet connectivity, and security controls while applying cloud networking best practices.
+
+Output: ghr
