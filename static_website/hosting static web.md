@@ -247,6 +247,21 @@ Private EC2 → NAT → Internet
 
 ---
 
+
+Important Steps:
+ec2:
+--> private instance: disable monitoring
+--> public instance :enable monitoring(public ascess enable)
+
+load balancing:
+--> subnet (public axcess)
+
+Launch template :
+--> don't axcess with security 
+
+asg :
+--> axcess with subnet (all subnet)
+
 # 🧠 ADVANCED INTERVIEW QUESTIONS
 
 ---
